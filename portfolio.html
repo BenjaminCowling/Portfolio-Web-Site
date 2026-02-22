@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Benjamin Andrew Cowling</title>
+    <meta name="description" content="Portfolio pieces by Benjamin Andrew Cowling — audio, video, and imagery.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=5">
+    <style>
+        /* ── Portfolio Page Specifics ─────────────── */
+        .page-hero {
+            padding: 7rem 2rem 3rem;
+            text-align: center;
+            background: radial-gradient(ellipse at 50% 40%, var(--gray-900) 0%, var(--black) 70%);
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.6rem;
+        }
+
+        .page-hero .tagline {
+            margin-bottom: 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--white);
+        }
+
+        .back-link::before {
+            content: '\2190';
+            font-size: 1rem;
+        }
+
+        /* ── Lightbox ─────────────────────────────── */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: zoom-out;
+            animation: lbFadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+            cursor: default;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            background: none;
+            border: 1px solid var(--gray-600);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--white);
+            border-color: var(--gray-400);
+        }
+
+        @keyframes lbFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="noise"></div>
+
+    <!-- ═══ Navigation ═══ -->
+    <nav class="site-nav" id="nav">
+        <a href="index.html" class="nav-logo">BAC</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#qualifications">Qualifications</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="portfolio.html" style="color: var(--white);">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- ═══ Page Hero ═══ -->
+    <section class="page-hero">
+        <a href="index.html" class="back-link">Back to Home</a>
+        <h1>Portfolio</h1>
+        <p class="tagline">Audio, video, and imagery — a living collection of my work.</p>
+    </section>
+
+    <!-- ═══ Portfolio Grid ═══ -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="showcase-grid">
+
+                <article class="showcase-card reveal" id="card-image">
+                    <div class="card-label">
+                        <span class="card-type">Image</span>
+                        <span class="card-dot"></span>
+                    </div>
+                    <a class="card-media lightbox-trigger"
+                        href="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Image.jpeg"
+                        data-lightbox="true">
+                        <img src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Image.jpeg"
+                            alt="DaVinci Resolve — Live gig video edit" loading="lazy">
+                        <div class="card-overlay"><span>View</span></div>
+                    </a>
+                    <div class="card-info">
+                        <h3>Live Gig Video Edit</h3>
+                        <p>DaVinci Resolve 20</p>
+                    </div>
+                </article>
+
+                <article class="showcase-card reveal" id="card-video">
+                    <div class="card-label">
+                        <span class="card-type">Video</span>
+                        <span class="card-dot"></span>
+                    </div>
+                    <div class="card-media video-media">
+                        <video controls preload="metadata">
+                            <source
+                                src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Video.mov"
+                                type="video/quicktime">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="card-info">
+                        <h3>Sample Video</h3>
+                        <p>Video Production</p>
+                    </div>
+                </article>
+
+                <article class="showcase-card reveal" id="card-audio">
+                    <div class="card-label">
+                        <span class="card-type">Audio</span>
+                        <span class="card-dot"></span>
+                    </div>
+                    <div class="card-media audio-media">
+                        <div class="audio-visual">
+                            <div class="audio-bars">
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <audio controls preload="metadata" id="audio-player">
+                            <source
+                                src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Audio.mp3"
+                                type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <div class="card-info">
+                        <h3>Sample Track</h3>
+                        <p>Audio Production</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ Footer ═══ -->
+    <footer class="site-footer">
+        <div class="footer-inner reveal">
+            <div class="footer-line"></div>
+            <p class="footer-name">Benjamin Andrew Cowling</p>
+            <p class="footer-copy">&copy; 2026 — Built with care.</p>
+        </div>
+    </footer>
+
+    <!-- ═══ Lightbox ═══ -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">Close</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        /* ── Scroll Reveal ──────────────────────── */
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        /* ── Mobile Nav ─────────────────────────── */
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+            navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+        }
+
+        /* ── Audio Bars ─────────────────────────── */
+        const audioPlayer = document.getElementById('audio-player');
+        const audioBars = document.querySelector('.audio-bars');
+        if (audioPlayer && audioBars) {
+            audioPlayer.addEventListener('play', () => audioBars.classList.add('playing'));
+            audioPlayer.addEventListener('pause', () => audioBars.classList.remove('playing'));
+            audioPlayer.addEventListener('ended', () => audioBars.classList.remove('playing'));
+        }
+
+        /* ── Lightbox ───────────────────────────── */
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                lightboxImg.src = trigger.href;
+                lightboxImg.alt = trigger.querySelector('img')?.alt || '';
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            lightboxImg.src = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+        });
+    </script>
+
+</body>
+
+</html>
