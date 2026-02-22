@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio — Coming Soon</title>
-    <meta name="description" content="Portfolio website — coming soon. Showcasing audio, video, and visual work.">
+    <meta name="description" content="Portfolio website — showcasing audio, video, and visual work.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <div class="noise"></div>
-    <div class="container">
-        <div class="content">
+
+    <!-- ───── Hero Section ───── -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
             <div class="logo-mark">
                 <span class="logo-line"></span>
                 <span class="logo-text">P</span>
@@ -26,58 +29,100 @@
             <h1>Portfolio</h1>
             <p class="tagline">Something creative is in the works.</p>
             <div class="divider"></div>
-            <p class="status">Currently under construction</p>
+            <p class="status-badge">Currently Under Construction</p>
             <div class="progress-track">
                 <div class="progress-bar"></div>
             </div>
+        </div>
+        <a href="#showcase" class="scroll-cue" aria-label="Scroll down">
+            <span class="scroll-cue-line"></span>
+            <span class="scroll-cue-text">Scroll</span>
+        </a>
+    </section>
 
-            <!-- Media Preview Section -->
-            <section class="media-preview">
-                <h2 class="section-title">Media Preview</h2>
+    <!-- ───── Showcase Section ───── -->
+    <section class="showcase" id="showcase">
+        <div class="section-header reveal">
+            <span class="section-number">01</span>
+            <h2 class="section-title">Showcase</h2>
+            <p class="section-sub">A preview of what's to come — audio, video, and imagery.</p>
+        </div>
 
-                <div class="media-grid">
-                    <!-- Image -->
-                    <div class="media-card">
-                        <span class="media-label">Image</span>
-                        <div class="media-frame">
-                            <img src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Image.jpeg"
-                                alt="Portfolio sample image" loading="lazy">
-                        </div>
-                    </div>
+        <div class="showcase-grid">
 
-                    <!-- Video -->
-                    <div class="media-card">
-                        <span class="media-label">Video</span>
-                        <div class="media-frame">
-                            <video controls preload="metadata">
-                                <source
-                                    src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Video.mov"
-                                    type="video/quicktime">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-
-                    <!-- Audio -->
-                    <div class="media-card audio-card">
-                        <span class="media-label">Audio</span>
-                        <div class="media-frame audio-frame">
-                            <div class="audio-icon">♫</div>
-                            <audio controls preload="metadata">
-                                <source
-                                    src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Audio.mp3"
-                                    type="audio/mpeg">
-                                Your browser does not support the audio tag.
-                            </audio>
-                        </div>
+            <!-- Image Card -->
+            <article class="showcase-card reveal" id="card-image">
+                <div class="card-label">
+                    <span class="card-type">Image</span>
+                    <span class="card-dot"></span>
+                </div>
+                <div class="card-media">
+                    <img src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Image.jpeg"
+                        alt="DaVinci Resolve — Live gig video edit" loading="lazy">
+                    <div class="card-overlay">
+                        <span>View</span>
                     </div>
                 </div>
-            </section>
+                <div class="card-info">
+                    <h3>Live Gig Video Edit</h3>
+                    <p>DaVinci Resolve 20</p>
+                </div>
+            </article>
+
+            <!-- Video Card -->
+            <article class="showcase-card reveal" id="card-video">
+                <div class="card-label">
+                    <span class="card-type">Video</span>
+                    <span class="card-dot"></span>
+                </div>
+                <div class="card-media video-media">
+                    <video controls preload="metadata" poster="">
+                        <source src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Video.mov"
+                            type="video/quicktime">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="card-info">
+                    <h3>Sample Video</h3>
+                    <p>Video Production</p>
+                </div>
+            </article>
+
+            <!-- Audio Card -->
+            <article class="showcase-card reveal" id="card-audio">
+                <div class="card-label">
+                    <span class="card-type">Audio</span>
+                    <span class="card-dot"></span>
+                </div>
+                <div class="card-media audio-media">
+                    <div class="audio-visual">
+                        <div class="audio-bars">
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <audio controls preload="metadata" id="audio-player">
+                        <source src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Audio.mp3"
+                            type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="card-info">
+                    <h3>Sample Track</h3>
+                    <p>Audio Production</p>
+                </div>
+            </article>
+
         </div>
-        <footer>
-            <p>&copy; 2026</p>
-        </footer>
-    </div>
+    </section>
+
+    <!-- ───── Footer ───── -->
+    <footer class="site-footer reveal">
+        <div class="footer-line"></div>
+        <p>&copy; 2026 &mdash; Built with care.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
