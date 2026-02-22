@@ -35,8 +35,7 @@
     --gray-900: #141414;
     --black: #0a0a0a;
 
-    --font-display: 'WmxyoSupa', 'Playfair Display', Georgia, serif;
-    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-display: 'WmxyoSupa', 'Inter', sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
