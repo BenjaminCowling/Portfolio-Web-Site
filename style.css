@@ -2,6 +2,15 @@
    Portfolio — Grayscale Theme
    ══════════════════════════════════════════════════════ */
 
+/* ── Custom Font ───────────────────────────────────── */
+@font-face {
+    font-family: 'WmxyoSupa';
+    src: url('Font/WmxyoSupa-q2nO6.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ── Reset ─────────────────────────────────────────── */
 *,
 *::before,
@@ -104,9 +113,9 @@ body {
 }
 
 .logo-text {
-    font-family: var(--font-serif);
-    font-size: 2.2rem;
-    font-weight: 600;
+    font-family: 'WmxyoSupa', var(--font-serif);
+    font-size: 2.6rem;
+    font-weight: normal;
     color: var(--white);
     letter-spacing: 0.18em;
     text-shadow: 0 0 40px rgba(255, 255, 255, 0.06);
@@ -223,9 +232,9 @@ h1 {
 
 .section-number {
     display: block;
-    font-family: var(--font-serif);
-    font-size: 0.85rem;
-    font-weight: 400;
+    font-family: 'WmxyoSupa', var(--font-serif);
+    font-size: 1rem;
+    font-weight: normal;
     color: var(--gray-500);
     letter-spacing: 0.15em;
     margin-bottom: 0.75rem;
@@ -308,6 +317,10 @@ h1 {
 .card-media {
     position: relative;
     overflow: hidden;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .card-media img {
