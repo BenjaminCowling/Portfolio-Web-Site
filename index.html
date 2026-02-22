@@ -4,127 +4,464 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio — Coming Soon</title>
-    <meta name="description" content="Portfolio website — showcasing audio, video, and visual work.">
+    <title>Benjamin Cowling — Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Benjamin Cowling — IT consultant, audio engineer, and multimedia professional.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body>
 
     <div class="noise"></div>
 
-    <!-- ───── Hero Section ───── -->
+    <!-- ═══ Navigation ═══ -->
+    <nav class="site-nav" id="nav">
+        <a href="#hero" class="nav-logo">BC</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#qualifications">Qualifications</a></li>
+            <li><a href="#showcase">Showcase</a></li>
+        </ul>
+    </nav>
+
+    <!-- ═══ Hero ═══ -->
     <section class="hero" id="hero">
         <div class="hero-inner">
             <div class="logo-mark">
                 <span class="logo-line"></span>
-                <span class="logo-text">P</span>
+                <span class="logo-text">BC</span>
                 <span class="logo-line"></span>
             </div>
-            <h1>Portfolio</h1>
-            <p class="tagline">Something creative is in the works.</p>
+            <h1>Benjamin Cowling</h1>
+            <p class="tagline">IT Consultant · Audio Engineer · Multimedia Professional</p>
             <div class="divider"></div>
-            <p class="status-badge">Currently Under Construction</p>
+            <p class="status-badge">Portfolio — Under Construction</p>
             <div class="progress-track">
                 <div class="progress-bar"></div>
             </div>
         </div>
-        <a href="#showcase" class="scroll-cue" aria-label="Scroll down">
+        <a href="#about" class="scroll-cue" aria-label="Scroll down">
             <span class="scroll-cue-line"></span>
             <span class="scroll-cue-text">Scroll</span>
         </a>
     </section>
 
-    <!-- ───── Showcase Section ───── -->
-    <section class="showcase" id="showcase">
-        <div class="section-header reveal">
-            <span class="section-number">01</span>
-            <h2 class="section-title">Showcase</h2>
-            <p class="section-sub">A preview of what's to come — audio, video, and imagery.</p>
-        </div>
-
-        <div class="showcase-grid">
-
-            <!-- Image Card -->
-            <article class="showcase-card reveal" id="card-image">
-                <div class="card-label">
-                    <span class="card-type">Image</span>
-                    <span class="card-dot"></span>
-                </div>
-                <a class="card-media"
-                    href="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Image.jpeg"
-                    target="_blank" rel="noopener">
-                    <img src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Image.jpeg"
-                        alt="DaVinci Resolve — Live gig video edit" loading="lazy">
-                    <div class="card-overlay">
-                        <span>View</span>
-                    </div>
-                </a>
-                <div class="card-info">
-                    <h3>Live Gig Video Edit</h3>
-                    <p>DaVinci Resolve 20</p>
-                </div>
-            </article>
-
-            <!-- Video Card -->
-            <article class="showcase-card reveal" id="card-video">
-                <div class="card-label">
-                    <span class="card-type">Video</span>
-                    <span class="card-dot"></span>
-                </div>
-                <div class="card-media video-media">
-                    <video controls preload="metadata" poster="">
-                        <source src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Video.mov"
-                            type="video/quicktime">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="card-info">
-                    <h3>Sample Video</h3>
-                    <p>Video Production</p>
-                </div>
-            </article>
-
-            <!-- Audio Card -->
-            <article class="showcase-card reveal" id="card-audio">
-                <div class="card-label">
-                    <span class="card-type">Audio</span>
-                    <span class="card-dot"></span>
-                </div>
-                <div class="card-media audio-media">
-                    <div class="audio-visual">
-                        <div class="audio-bars">
-                            <span></span><span></span><span></span><span></span><span></span>
-                            <span></span><span></span><span></span><span></span><span></span>
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                    </div>
-                    <audio controls preload="metadata" id="audio-player">
-                        <source src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Audio.mp3"
-                            type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="card-info">
-                    <h3>Sample Track</h3>
-                    <p>Audio Production</p>
-                </div>
-            </article>
-
+    <!-- ═══ About ═══ -->
+    <section class="section" id="about">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-number">01</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content reveal">
+                <p>I am a technically minded and proactive professional with a lifelong passion for technology. With a
+                    BSc (Hons) in Multimedia Technology and a strong foundation in Music Production, my career spans
+                    over two decades across the IT, live audio, and high-volume hospitality sectors.</p>
+                <p>Throughout my 3+ years managing head office operations and 10+ years facilitating venue audio, I
+                    consistently acted as the "unofficial" IT lead — migrating company data to cloud systems, upgrading
+                    physical network infrastructure, and troubleshooting hardware faults. I thrive in high-pressure
+                    environments, using my background in 5-star customer service and live sound engineering to
+                    de-escalate stressful situations and solve problems on the fly.</p>
+                <p>Following a recent redundancy, I seized the opportunity to formalize my technical expertise by
+                    self-funding my CompTIA A+ certification and launching a freelance IT consultancy. I pride myself on
+                    my communication skills and my ability to translate complex technical solutions into
+                    business-friendly language. This portfolio serves as a living record of my work, showcasing my
+                    ability to bridge the gap between technical infrastructure, audio-visual production, and day-to-day
+                    business operations.</p>
+            </div>
         </div>
     </section>
 
-    <!-- ───── Footer ───── -->
-    <footer class="site-footer reveal">
-        <div class="footer-line"></div>
-        <p>&copy; 2026 &mdash; Built with care.</p>
+    <!-- ═══ Skills ═══ -->
+    <section class="section section-alt" id="skills">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Professional Skills</h2>
+            </div>
+            <div class="skills-grid">
+
+                <div class="skill-card reveal">
+                    <h3>IT &amp; Network Administration</h3>
+                    <ul>
+                        <li>CompTIA A+ Certification (in progress)</li>
+                        <li>Hardware diagnostics, troubleshooting &amp; assembly</li>
+                        <li>Network infrastructure overhaul — cabling, routers, switches</li>
+                        <li>Custom Guest Wi-Fi portal design</li>
+                        <li>Cloud migration — NAS to Microsoft OneDrive</li>
+                        <li>End-user support &amp; POS troubleshooting</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card reveal">
+                    <h3>Audio Engineering &amp; Production</h3>
+                    <ul>
+                        <li>Live sound engineering &amp; acoustic troubleshooting</li>
+                        <li>Steinberg Cubase &amp; Wavelab proficiency</li>
+                        <li>Multitrack recording, mixing &amp; mastering</li>
+                        <li>Audio editing — Sony Sound Forge</li>
+                        <li>Stage setup &amp; equipment maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card reveal">
+                    <h3>Digital Media &amp; Software</h3>
+                    <ul>
+                        <li>Advanced Excel — data analysis &amp; process automation</li>
+                        <li>Microsoft Office 365, Xero &amp; Dext</li>
+                        <li>Adobe Creative Suite — Photoshop, Premiere Pro, After Effects</li>
+                        <li>3D modelling — Autodesk 3D Studio Max &amp; Maya</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card reveal">
+                    <h3>Hospitality &amp; Operations</h3>
+                    <ul>
+                        <li>5-star customer service &amp; premium bartending</li>
+                        <li>Staff supervision &amp; shift coordination</li>
+                        <li>Stock management &amp; par-level systems</li>
+                        <li>Health &amp; safety compliance</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ Experience ═══ -->
+    <section class="section" id="experience">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Employment History</h2>
+            </div>
+            <div class="timeline">
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oct 2025 — Present</span>
+                        <h3>Consultant — Networking &amp; Audio Engineer</h3>
+                        <p class="timeline-company">Self Employed</p>
+                        <p>Following a redundancy, transitioned into freelance technical work. Contracted to audit and
+                            overhaul network equipment for a local SME.</p>
+                        <ul>
+                            <li>Replaced aging cabling and hardware to improve connection stability</li>
+                            <li>Designed and deployed a bespoke Guest Wi-Fi Portal</li>
+                            <li>Configured network permissions for secure customer experience</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oct 2023 — Present</span>
+                        <h3>Volunteer Stock Room</h3>
+                        <p class="timeline-company">British Heart Foundation</p>
+                        <p>Volunteering in stock and logistics, demonstrating reliability and strong organizational
+                            skills.</p>
+                        <ul>
+                            <li>Managing stock intake and processing with high accuracy</li>
+                            <li>Awarded the "BHF Thank You Award" in June 2024</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Apr 2014 — Oct 2025</span>
+                        <h3>Head Office Admin / IT &amp; Audio Engineer</h3>
+                        <p class="timeline-company">Sandinista Ltd — Leeds</p>
+                        <p>A dual-role position managing head office operations while serving as the primary technical
+                            support lead and venue sound engineer.</p>
+                        <ul>
+                            <li>Migrated company data from legacy NAS to shared OneDrive</li>
+                            <li>First point of contact for end-user support — hardware, POS, and software</li>
+                            <li>Managed servicing and repair of IT and high-value audio equipment</li>
+                            <li>Designed stock par-level system in Excel to reduce waste</li>
+                            <li>Live sound for events — mixed, multitrack recordings using Cubase &amp; Wavelab</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oct 2010 — Apr 2014</span>
+                        <h3>Bar Tender</h3>
+                        <p class="timeline-company">DoubleTree by Hilton</p>
+                        <p>Delivered 5-star customer service in the high-volume flagship Sky Lounge.</p>
+                        <ul>
+                            <li>Premium product upselling with extensive product knowledge</li>
+                            <li>Stock ordering, rotation &amp; health and safety training</li>
+                            <li>Only 2 sick days in 3.5 years of service</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Nov 2007 — Aug 2010</span>
+                        <h3>Bar Staff &amp; Sound Engineer</h3>
+                        <p class="timeline-company">Sandinista Ltd</p>
+                        <p>Progressed from Bar Back to Bar Staff and Sound Engineer.</p>
+                        <ul>
+                            <li>Live audio setups — split-second problem solving during performances</li>
+                            <li>Key holder — cashing up, processing change, venue opening</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Feb 2008 — Jun 2008</span>
+                        <h3>Night Auditor</h3>
+                        <p class="timeline-company">Novotel Hotel</p>
+                        <p>Completed daily banking and hotel auditing procedures as part of a two-person night team.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jun 2006 — Nov 2007</span>
+                        <h3>Team Leader</h3>
+                        <p class="timeline-company">JD Wetherspoon</p>
+                        <p>Coordinated and led a bar team in a supervisory capacity.</p>
+                        <ul>
+                            <li>Supervised team members — task assignment &amp; break management</li>
+                            <li>Cellar duties including cask ale management</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Sep 2003 — Jun 2006</span>
+                        <h3>Bar Back Supervisor</h3>
+                        <p class="timeline-company">Fire Fly</p>
+                        <p>Trained and supervised a team working under pressure in a busy cocktail bar and nightclub.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Apr 2001 — Nov 2002</span>
+                        <h3>Ride Operator</h3>
+                        <p class="timeline-company">Lightwater Valley Theme Park</p>
+                        <p>Operated large rides and ensured customer safety as part of the Ultimate Team.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jul 1999</span>
+                        <h3>Work Experience</h3>
+                        <p class="timeline-company">Teleware Plc</p>
+                        <p>Two-week placement — Week 1: Computer Hardware Engineer, Week 2: Software Engineer. Early
+                            exposure to IT infrastructure that sparked a lifelong interest.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ Qualifications ═══ -->
+    <section class="section section-alt" id="qualifications">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Qualifications</h2>
+            </div>
+            <div class="quals-grid">
+
+                <div class="qual-card reveal">
+                    <span class="qual-status in-progress">In Progress</span>
+                    <h3>CompTIA A+ Certification</h3>
+                    <p class="qual-institution">Self-Study</p>
+                    <p class="qual-date">Expected Summer 2026</p>
+                </div>
+
+                <div class="qual-card reveal">
+                    <span class="qual-status completed">2:1 Honours</span>
+                    <h3>BSc (Hons) Multi-Media Technology</h3>
+                    <p class="qual-institution">Leeds Metropolitan University</p>
+                    <p class="qual-date">Sep 2004 — Jun 2006</p>
+                </div>
+
+                <div class="qual-card reveal">
+                    <h3>HND Music Production</h3>
+                    <p class="qual-detail">6 Distinctions, 9 Merits</p>
+                    <p class="qual-institution">Leeds College of Music</p>
+                    <p class="qual-date">Sep 2002 — Jul 2004</p>
+                </div>
+
+                <div class="qual-card reveal">
+                    <h3>BTEC National Diploma — Music Technology</h3>
+                    <p class="qual-detail">Merit Profile</p>
+                    <p class="qual-institution">Leeds College of Music</p>
+                    <p class="qual-date">Sep 2000 — Jul 2002</p>
+                </div>
+
+                <div class="qual-card reveal">
+                    <h3>GCSE English (Speaking &amp; Listening)</h3>
+                    <p class="qual-detail">Grade B</p>
+                    <p class="qual-institution">Leeds College of Music</p>
+                    <p class="qual-date">2000 — 2001</p>
+                </div>
+
+                <div class="qual-card reveal">
+                    <h3>GCSEs — 9 obtained</h3>
+                    <p class="qual-detail">Including Maths (B) and Science (CC)</p>
+                    <p class="qual-institution">Thirsk School</p>
+                    <p class="qual-date">Sep 1998 — Jun 2000</p>
+                </div>
+
+            </div>
+
+            <!-- Awards -->
+            <div class="section-header reveal" style="margin-top: 4rem;">
+                <h2 class="section-title" style="font-size: clamp(1.4rem, 3vw, 2rem);">Awards &amp; Certifications</h2>
+            </div>
+            <div class="awards-list">
+                <div class="award-item reveal">
+                    <span class="award-year">2024</span>
+                    <div>
+                        <h3>BHF Thank You Award</h3>
+                        <p>British Heart Foundation — Leeds Merrion Centre</p>
+                    </div>
+                </div>
+                <div class="award-item reveal">
+                    <span class="award-year">2012</span>
+                    <div>
+                        <h3>Intermediate Certificate in Wines &amp; Spirits (WSET)</h3>
+                        <p>DoubleTree By Hilton — Merit</p>
+                    </div>
+                </div>
+                <div class="award-item reveal">
+                    <span class="award-year">2002</span>
+                    <div>
+                        <h3>The Fox's Music Prize for Music Technology</h3>
+                        <p>Leeds College of Music</p>
+                    </div>
+                </div>
+                <div class="award-item reveal">
+                    <span class="award-year">—</span>
+                    <div>
+                        <h3>Grade 2 Trumpet — Merit</h3>
+                        <p>The Associated Board of the Royal Schools of Music</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ Showcase ═══ -->
+    <section class="section" id="showcase">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Showcase</h2>
+                <p class="section-sub">A preview of what's to come — audio, video, and imagery.</p>
+            </div>
+
+            <div class="showcase-grid">
+
+                <article class="showcase-card reveal" id="card-image">
+                    <div class="card-label">
+                        <span class="card-type">Image</span>
+                        <span class="card-dot"></span>
+                    </div>
+                    <a class="card-media"
+                        href="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Image.jpeg"
+                        target="_blank" rel="noopener">
+                        <img src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Image.jpeg"
+                            alt="DaVinci Resolve — Live gig video edit" loading="lazy">
+                        <div class="card-overlay"><span>View</span></div>
+                    </a>
+                    <div class="card-info">
+                        <h3>Live Gig Video Edit</h3>
+                        <p>DaVinci Resolve 20</p>
+                    </div>
+                </article>
+
+                <article class="showcase-card reveal" id="card-video">
+                    <div class="card-label">
+                        <span class="card-type">Video</span>
+                        <span class="card-dot"></span>
+                    </div>
+                    <div class="card-media video-media">
+                        <video controls preload="metadata">
+                            <source
+                                src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Video.mov"
+                                type="video/quicktime">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="card-info">
+                        <h3>Sample Video</h3>
+                        <p>Video Production</p>
+                    </div>
+                </article>
+
+                <article class="showcase-card reveal" id="card-audio">
+                    <div class="card-label">
+                        <span class="card-type">Audio</span>
+                        <span class="card-dot"></span>
+                    </div>
+                    <div class="card-media audio-media">
+                        <div class="audio-visual">
+                            <div class="audio-bars">
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <audio controls preload="metadata" id="audio-player">
+                            <source
+                                src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Audio.mp3"
+                                type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <div class="card-info">
+                        <h3>Sample Track</h3>
+                        <p>Audio Production</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ Footer ═══ -->
+    <footer class="site-footer">
+        <div class="footer-inner reveal">
+            <div class="footer-line"></div>
+            <p class="footer-name">Benjamin Cowling</p>
+            <p class="footer-copy">&copy; 2026 — Built with care.</p>
+        </div>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 
 </html>
