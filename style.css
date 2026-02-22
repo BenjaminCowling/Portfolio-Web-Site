@@ -1,0 +1,183 @@
+/* ── Reset & Base ───────────────────────────────── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white:    #f5f5f5;
+    --gray-100: #e0e0e0;
+    --gray-200: #c0c0c0;
+    --gray-300: #9e9e9e;
+    --gray-400: #757575;
+    --gray-500: #616161;
+    --gray-600: #424242;
+    --gray-700: #303030;
+    --gray-800: #212121;
+    --gray-900: #121212;
+    --black:    #0a0a0a;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--black);
+    color: var(--gray-200);
+    overflow: hidden;
+}
+
+/* ── Film-grain noise overlay ──────────────────── */
+.noise {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.04;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+/* ── Layout ────────────────────────────────────── */
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+}
+
+.content {
+    text-align: center;
+    animation: fadeUp 1.2s ease-out both;
+}
+
+/* ── Logo mark ─────────────────────────────────── */
+.logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.15em;
+}
+
+.logo-line {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gray-400),
+        transparent
+    );
+}
+
+/* ── Typography ────────────────────────────────── */
+h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.tagline {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--gray-300);
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+}
+
+.divider {
+    width: 48px;
+    height: 1px;
+    margin: 0 auto 2rem;
+    background: var(--gray-500);
+}
+
+.status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gray-400);
+    margin-bottom: 1rem;
+}
+
+/* ── Progress bar ──────────────────────────────── */
+.progress-track {
+    width: 200px;
+    height: 2px;
+    margin: 0 auto;
+    background: var(--gray-700);
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 35%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--gray-400), var(--white));
+    border-radius: 1px;
+    animation: shimmer 2.5s ease-in-out infinite;
+}
+
+/* ── Footer ────────────────────────────────────── */
+footer {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.7rem;
+    color: var(--gray-500);
+    letter-spacing: 0.1em;
+}
+
+/* ── Animations ────────────────────────────────── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        opacity: 0.4;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(60%);
+    }
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (max-width: 480px) {
+    .logo-line {
+        width: 36px;
+    }
+    .progress-track {
+        width: 160px;
+    }
+}
