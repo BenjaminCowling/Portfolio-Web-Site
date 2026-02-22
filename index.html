@@ -545,11 +545,112 @@
         </div>
     </section>
 
-    <!-- ═══ Contact ═══ -->
-    <section class="section section-alt" id="contact">
+    <!-- ═══ Self-Hosting ═══ -->
+    <section class="section section-alt" id="infrastructure">
         <div class="section-inner">
             <div class="section-header reveal">
                 <span class="section-number">08</span>
+                <h2 class="section-title">How This Site Is Built</h2>
+                <p class="section-sub">Self-hosted from scratch — no third-party platforms, no page builders.</p>
+            </div>
+
+            <div class="infra-layout">
+
+                <div class="infra-overview reveal">
+                    <p>This portfolio is entirely self-hosted on a custom-built Raspberry Pi 5 server running
+                        headless from my home network. Every layer of the stack — from hardware to deployment — is
+                        configured and maintained by hand, demonstrating the same infrastructure skills documented
+                        throughout this portfolio.</p>
+                </div>
+
+                <div class="infra-grid">
+
+                    <div class="infra-card reveal">
+                        <h3>Hardware</h3>
+                        <ul>
+                            <li>Raspberry Pi 5 — custom Debian server</li>
+                            <li>PCIe Gen 3 NVMe storage via HAT</li>
+                            <li>Active PWM cooling system</li>
+                            <li>Dual ZFS pools — application data &amp; mass media separated</li>
+                        </ul>
+                    </div>
+
+                    <div class="infra-card reveal">
+                        <h3>Web Server</h3>
+                        <ul>
+                            <li>Apache2 with name-based virtual hosts</li>
+                            <li>Dedicated vhost for <code>portfolio.musicat.me</code></li>
+                            <li>Custom error and access logging</li>
+                            <li>Hand-coded HTML, CSS &amp; JavaScript — no frameworks</li>
+                        </ul>
+                    </div>
+
+                    <div class="infra-card reveal">
+                        <h3>Networking &amp; Security</h3>
+                        <ul>
+                            <li>Cloudflare Tunnel — zero-trust HTTPS exposure</li>
+                            <li>No open ports — all traffic routed via encrypted tunnel</li>
+                            <li>Tailscale mesh VPN for remote SSH administration</li>
+                            <li>Pi-hole for network-wide DNS sinkholing</li>
+                        </ul>
+                    </div>
+
+                    <div class="infra-card reveal">
+                        <h3>Media &amp; Storage</h3>
+                        <ul>
+                            <li>BackBlaze B2 cloud bucket for media assets</li>
+                            <li>Audio, video &amp; images served via B2 public URLs</li>
+                            <li>B2 CLI for headless uploads and management</li>
+                            <li>ZFS for local data integrity and redundancy</li>
+                        </ul>
+                    </div>
+
+                    <div class="infra-card reveal">
+                        <h3>Deployment &amp; Version Control</h3>
+                        <ul>
+                            <li>GitHub repository for source code</li>
+                            <li>SCP-based deployment over Tailscale VPN</li>
+                            <li>SSH key authentication — passwordless access</li>
+                            <li>Fully headless workflow — no GUI required</li>
+                        </ul>
+                    </div>
+
+                    <div class="infra-card reveal">
+                        <h3>Architecture Flow</h3>
+                        <div class="infra-flow">
+                            <span class="flow-node">Local Dev</span>
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="flow-node">GitHub</span>
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="flow-node">SCP</span>
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="flow-node">Pi / Apache</span>
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="flow-node">Cloudflare</span>
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="flow-node">You</span>
+                        </div>
+                        <div class="infra-flow" style="margin-top: 1rem;">
+                            <span class="flow-node">Media Files</span>
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="flow-node">B2 CLI</span>
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="flow-node">BackBlaze B2</span>
+                            <span class="flow-arrow">&rarr;</span>
+                            <span class="flow-node">Browser</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ Contact ═══ -->
+    <section class="section" id="contact">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-number">09</span>
                 <h2 class="section-title">Contact</h2>
             </div>
 

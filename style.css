@@ -994,6 +994,111 @@ audio {
 }
 
 /* ══════════════════════════════════════════════════════
+   INFRASTRUCTURE / SELF-HOSTING
+   ══════════════════════════════════════════════════════ */
+.infra-overview {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.infra-overview p {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--gray-200);
+}
+
+.infra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.infra-card {
+    background: var(--gray-800);
+    border: 1px solid var(--gray-700);
+    border-radius: 10px;
+    padding: 1.75rem;
+    transition: border-color 0.3s ease, transform 0.3s var(--ease-out-expo);
+}
+
+.infra-card:hover {
+    border-color: var(--gray-500);
+    transform: translateY(-3px);
+}
+
+.infra-card h3 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--gray-700);
+}
+
+.infra-card ul {
+    list-style: none;
+}
+
+.infra-card li {
+    font-size: 0.82rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.3rem;
+}
+
+.infra-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gray-500);
+}
+
+.infra-card code {
+    font-size: 0.78rem;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    color: var(--gray-200);
+}
+
+/* Architecture Flow Diagram */
+.infra-flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.flow-node {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-200);
+    background: var(--gray-700);
+    border: 1px solid var(--gray-600);
+    padding: 0.4rem 0.85rem;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.flow-arrow {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+
+/* ══════════════════════════════════════════════════════
    CONTACT
    ══════════════════════════════════════════════════════ */
 .contact-layout {
@@ -1261,6 +1366,10 @@ a.contact-value:hover {
     }
 
     .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .infra-grid {
         grid-template-columns: 1fr;
     }
 
