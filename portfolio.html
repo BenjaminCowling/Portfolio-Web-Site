@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
     <style>
         /* ── Portfolio Page Specifics ─────────────── */
         .page-hero {
@@ -111,6 +111,282 @@
                 opacity: 1;
             }
         }
+
+        /* ── Section Divider ────────────────────── */
+        .section-divider {
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            text-align: center;
+            margin: 1rem 0 2rem;
+        }
+
+        /* ── Music Player ─────────────────────────── */
+        .player-wrap {
+            display: flex;
+            gap: 2rem;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .player-art {
+            width: 280px;
+            min-height: 280px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .player-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .player-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem 1.5rem 1.5rem 0;
+            min-width: 0;
+        }
+
+        /* Now Playing */
+        .now-playing {
+            margin-bottom: 1.25rem;
+        }
+
+        .now-playing-label {
+            font-family: var(--font-display);
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 0.4rem;
+        }
+
+        .now-playing-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--white);
+            letter-spacing: 0.04em;
+        }
+
+        .now-playing-artist {
+            font-size: 0.82rem;
+            color: var(--gray-400);
+            margin-top: 0.15rem;
+        }
+
+        /* Controls */
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-play {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--gray-600);
+            background: none;
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .btn-play:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-prev,
+        .btn-next {
+            background: none;
+            border: none;
+            color: var(--gray-400);
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 0.3rem;
+            transition: color 0.2s ease;
+        }
+
+        .btn-prev:hover,
+        .btn-next:hover {
+            color: var(--white);
+        }
+
+        .progress-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .progress-bar-track {
+            flex: 1;
+            height: 3px;
+            background: var(--gray-700);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--gray-300);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .time-display {
+            font-size: 0.7rem;
+            color: var(--gray-500);
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+            min-width: 32px;
+        }
+
+        /* Download button */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-display);
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            text-decoration: none;
+            border: 1px solid var(--gray-700);
+            padding: 0.35rem 0.8rem;
+            border-radius: 100px;
+            transition: all 0.2s ease;
+            margin-top: 0.25rem;
+            align-self: flex-start;
+        }
+
+        .btn-download:hover {
+            color: var(--white);
+            border-color: var(--gray-500);
+        }
+
+        /* Track List */
+        .track-list-wrap {
+            margin-top: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gray-600) transparent;
+        }
+
+        .artist-group-label {
+            font-family: var(--font-display);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            padding: 0.6rem 0.75rem 0.3rem;
+            position: sticky;
+            top: 0;
+            background: var(--gray-900);
+            z-index: 1;
+        }
+
+        .track-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.55rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.15s ease;
+            gap: 0.75rem;
+        }
+
+        .track-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .track-item.active {
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .track-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .track-item-title {
+            font-size: 0.82rem;
+            color: var(--gray-200);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .track-item.active .track-item-title {
+            color: var(--white);
+        }
+
+        .track-item-artist {
+            font-size: 0.7rem;
+            color: var(--gray-500);
+        }
+
+        .track-item-dl {
+            font-family: var(--font-display);
+            font-size: 0.55rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            text-decoration: none;
+            padding: 0.2rem 0.5rem;
+            border: 1px solid var(--gray-700);
+            border-radius: 100px;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .track-item-dl:hover {
+            color: var(--white);
+            border-color: var(--gray-500);
+        }
+
+        .track-count {
+            font-size: 0.7rem;
+            color: var(--gray-500);
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .player-wrap {
+                flex-direction: column;
+            }
+
+            .player-art {
+                width: 100%;
+                height: 200px;
+            }
+
+            .player-body {
+                padding: 1.25rem;
+            }
+        }
     </style>
 </head>
 
@@ -141,11 +417,56 @@
         <p class="tagline">Audio, video, and imagery — a living collection of my work.</p>
     </section>
 
-    <!-- ═══ Portfolio Grid ═══ -->
+    <!-- ═══ Music Player ═══ -->
     <section class="section">
         <div class="section-inner">
-            <div class="showcase-grid">
+            <div class="section-header reveal">
+                <h2 class="section-title">Live Recordings</h2>
+                <p class="section-sub">Recorded, mixed, and mastered live at various Leeds venues.</p>
+            </div>
 
+            <div class="player-wrap reveal" id="music-player">
+                <div class="player-art">
+                    <img id="cover-art"
+                        src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/music/cover-art.png"
+                        alt="Live Recordings Cover Art">
+                </div>
+                <div class="player-body">
+                    <div class="now-playing">
+                        <div class="now-playing-label">Now Playing</div>
+                        <div class="now-playing-title" id="np-title">Select a track</div>
+                        <div class="now-playing-artist" id="np-artist">&mdash;</div>
+                    </div>
+                    <div class="player-controls">
+                        <button class="btn-prev" id="btn-prev" aria-label="Previous">&#9664;&#9664;</button>
+                        <button class="btn-play" id="btn-play" aria-label="Play">&#9654;</button>
+                        <button class="btn-next" id="btn-next" aria-label="Next">&#9654;&#9654;</button>
+                        <div class="progress-wrap">
+                            <span class="time-display" id="time-current">0:00</span>
+                            <div class="progress-bar-track" id="progress-track">
+                                <div class="progress-bar-fill" id="progress-fill"></div>
+                            </div>
+                            <span class="time-display" id="time-total">0:00</span>
+                        </div>
+                    </div>
+                    <a class="btn-download" id="btn-flac" href="#" download>&#8595; Download FLAC</a>
+                </div>
+            </div>
+
+            <div class="track-list-wrap reveal" id="track-list">
+                <div class="track-count" id="track-count">Loading tracks&hellip;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ Media Showcase ═══ -->
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <h2 class="section-title">Media</h2>
+                <p class="section-sub">Video production and photography.</p>
+            </div>
+            <div class="showcase-grid">
                 <article class="showcase-card reveal" id="card-image">
                     <div class="card-label">
                         <span class="card-type">Image</span>
@@ -182,32 +503,6 @@
                         <p>Video Production</p>
                     </div>
                 </article>
-
-                <article class="showcase-card reveal" id="card-audio">
-                    <div class="card-label">
-                        <span class="card-type">Audio</span>
-                        <span class="card-dot"></span>
-                    </div>
-                    <div class="card-media audio-media">
-                        <div class="audio-visual">
-                            <div class="audio-bars">
-                                <span></span><span></span><span></span><span></span><span></span>
-                                <span></span><span></span><span></span><span></span><span></span>
-                                <span></span><span></span><span></span><span></span><span></span>
-                            </div>
-                        </div>
-                        <audio controls preload="metadata" id="audio-player">
-                            <source
-                                src="https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/test-samples/Audio.mp3"
-                                type="audio/mpeg">
-                        </audio>
-                    </div>
-                    <div class="card-info">
-                        <h3>Sample Track</h3>
-                        <p>Audio Production</p>
-                    </div>
-                </article>
-
             </div>
         </div>
     </section>
@@ -226,6 +521,9 @@
         <button class="lightbox-close" id="lightbox-close">Close</button>
         <img id="lightbox-img" src="" alt="">
     </div>
+
+    <!-- Hidden audio element -->
+    <audio id="audio-el" preload="metadata"></audio>
 
     <script>
         /* ── Scroll Reveal ──────────────────────── */
@@ -246,15 +544,6 @@
         if (navToggle && navLinks) {
             navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
             navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
-        }
-
-        /* ── Audio Bars ─────────────────────────── */
-        const audioPlayer = document.getElementById('audio-player');
-        const audioBars = document.querySelector('.audio-bars');
-        if (audioPlayer && audioBars) {
-            audioPlayer.addEventListener('play', () => audioBars.classList.add('playing'));
-            audioPlayer.addEventListener('pause', () => audioBars.classList.remove('playing'));
-            audioPlayer.addEventListener('ended', () => audioBars.classList.remove('playing'));
         }
 
         /* ── Lightbox ───────────────────────────── */
@@ -285,6 +574,218 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
         });
+
+        /* ═══════════════════════════════════════════
+           MUSIC PLAYER
+           ═══════════════════════════════════════════ */
+        const audio = document.getElementById('audio-el');
+        const btnPlay = document.getElementById('btn-play');
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+        const btnFlac = document.getElementById('btn-flac');
+        const npTitle = document.getElementById('np-title');
+        const npArtist = document.getElementById('np-artist');
+        const timeCurrent = document.getElementById('time-current');
+        const timeTotal = document.getElementById('time-total');
+        const progressTrack = document.getElementById('progress-track');
+        const progressFill = document.getElementById('progress-fill');
+        const trackListEl = document.getElementById('track-list');
+        const trackCountEl = document.getElementById('track-count');
+
+        let tracks = [];
+        let currentIndex = -1;
+        let isPlaying = false;
+
+        /* Force Download of Cross-Origin Files */
+        async function forceDownload(url, filename, buttonEl) {
+            if (buttonEl) {
+                buttonEl._originalText = buttonEl.innerHTML;
+                buttonEl.innerHTML = '&#8635; Downloading...';
+                buttonEl.style.pointerEvents = 'none';
+                buttonEl.style.opacity = '0.7';
+            }
+            try {
+                const res = await fetch(url);
+                const blob = await res.blob();
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(a.href);
+            } catch (err) {
+                console.error("Download failed:", err);
+                alert("Download failed. Please check console for details.");
+            } finally {
+                if (buttonEl) {
+                    buttonEl.innerHTML = buttonEl._originalText;
+                    buttonEl.style.pointerEvents = 'auto';
+                    buttonEl.style.opacity = '1';
+                }
+            }
+        }
+
+        btnFlac.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentIndex >= 0 && tracks[currentIndex].flac) {
+                forceDownload(tracks[currentIndex].flac, `${tracks[currentIndex].artist} - ${tracks[currentIndex].title}.flac`, btnFlac);
+            }
+        });
+
+        /* Format seconds to m:ss */
+        function fmt(s) {
+            if (!s || isNaN(s)) return '0:00';
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60);
+            return m + ':' + (sec < 10 ? '0' : '') + sec;
+        }
+
+        /* Load track list from JSON */
+        async function loadTracks() {
+            try {
+                const resp = await fetch('https://f003.backblazeb2.com/file/Portfolio-Frodo-Baggins/music/tracks.json?v=' + Date.now());
+                tracks = await resp.json();
+                renderTrackList();
+            } catch (err) {
+                trackCountEl.textContent = 'Could not load track list.';
+                console.error('Failed to load tracks:', err);
+            }
+        }
+
+        /* Render grouped track list */
+        function renderTrackList() {
+            let html = '';
+            let lastArtist = '';
+            tracks.forEach((t, i) => {
+                if (t.artist !== lastArtist) {
+                    html += `<div class="artist-group-label">${t.artist}</div>`;
+                    lastArtist = t.artist;
+                }
+                html += `<div class="track-item" data-index="${i}">
+                    <div class="track-item-info">
+                        <div class="track-item-title">${t.title}</div>
+                    </div>
+                    ${t.flac ? `<a class="track-item-dl" href="${t.flac}" download title="Download FLAC">FLAC</a>` : ''}
+                </div>`;
+            });
+            html += `<div class="track-count">${tracks.length} tracks across ${new Set(tracks.map(t => t.artist)).size} artists</div>`;
+            trackListEl.innerHTML = html;
+
+            /* Click handlers */
+            trackListEl.querySelectorAll('.track-item').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    const dlBtn = e.target.closest('.track-item-dl');
+                    if (dlBtn) {
+                        e.preventDefault();
+                        const idx = parseInt(el.dataset.index);
+                        forceDownload(dlBtn.href, `${tracks[idx].artist} - ${tracks[idx].title}.flac`, dlBtn);
+                        return; // don't play track when downloading
+                    }
+                    playTrack(parseInt(el.dataset.index));
+                });
+            });
+        }
+
+        /* Play a specific track */
+        function playTrack(index) {
+            if (index < 0 || index >= tracks.length) return;
+            currentIndex = index;
+            const t = tracks[index];
+
+            npTitle.textContent = t.title;
+            npArtist.textContent = t.artist;
+            btnFlac.href = t.flac || '#';
+            btnFlac.style.display = t.flac ? '' : 'none';
+
+            audio.src = t.mp3;
+            audio.play();
+            isPlaying = true;
+            btnPlay.innerHTML = '&#9646;&#9646;';
+
+            /* Highlight active track */
+            trackListEl.querySelectorAll('.track-item').forEach((el, i) => {
+                el.classList.toggle('active', i === index);
+            });
+
+            /* Scroll active track into view */
+            const activeEl = trackListEl.querySelector('.track-item.active');
+            if (activeEl) activeEl.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        }
+
+        /* Play / Pause */
+        btnPlay.addEventListener('click', () => {
+            if (currentIndex === -1 && tracks.length > 0) {
+                playTrack(0);
+                return;
+            }
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+                btnPlay.innerHTML = '&#9654;';
+            } else {
+                audio.play();
+                isPlaying = true;
+                btnPlay.innerHTML = '&#9646;&#9646;';
+            }
+        });
+
+        /* Prev / Next */
+        btnPrev.addEventListener('click', () => {
+            if (audio.currentTime > 3) {
+                audio.currentTime = 0;
+            } else {
+                playTrack((currentIndex - 1 + tracks.length) % tracks.length);
+            }
+        });
+
+        btnNext.addEventListener('click', () => {
+            playTrack((currentIndex + 1) % tracks.length);
+        });
+
+        /* Auto-advance */
+        audio.addEventListener('ended', () => {
+            playTrack((currentIndex + 1) % tracks.length);
+        });
+
+        /* Progress bar update */
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                progressFill.style.width = pct + '%';
+                timeCurrent.textContent = fmt(audio.currentTime);
+            }
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            timeTotal.textContent = fmt(audio.duration);
+        });
+
+        /* Click to seek */
+        progressTrack.addEventListener('click', (e) => {
+            const rect = progressTrack.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            if (audio.duration) {
+                audio.currentTime = pct * audio.duration;
+            }
+        });
+
+        /* Keyboard: Space = play/pause, Left/Right = prev/next */
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) return;
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            if (e.code === 'Space') {
+                e.preventDefault();
+                btnPlay.click();
+            } else if (e.code === 'ArrowLeft') {
+                btnPrev.click();
+            } else if (e.code === 'ArrowRight') {
+                btnNext.click();
+            }
+        });
+
+        /* Init */
+        loadTracks();
     </script>
 
 </body>
